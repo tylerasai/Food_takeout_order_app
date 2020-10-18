@@ -1,7 +1,0 @@
-$(() => {
-
-  window.menuList = {};
-
-  function 
-
-})
