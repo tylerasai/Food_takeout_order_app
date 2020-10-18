@@ -23,12 +23,11 @@
     <!--Fixed header from the _partials/header-->
     <%- include partials/_header %>
 
-    <h1>Welcome to MyRestaurant</h1>
-    <form action="/menu">
-      <button class="place_order">Place an order</button>
-    </form>
-    
+    <h1>Welcome to the menu</h1>
 
+    <!--Dynamic menu from the psql database-->
+
+    <script src="routes/menu.js"></script>
 
     <!--Bootstrap JS-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
