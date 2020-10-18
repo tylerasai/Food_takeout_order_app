@@ -1,3 +1,4 @@
+
 $(()=> {
 
 
@@ -6,8 +7,9 @@ $(()=> {
   }
   appending();
 
-  Axios.get("api/menu").then((response) => {
-    console.log(response);
+  
+  axios.get("https://reqres.in/api/users?page=2").then((response) => {
+    c$(".menu").append(`${response}`);
   })
   
 
