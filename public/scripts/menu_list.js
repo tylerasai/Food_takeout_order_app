@@ -1,11 +1,10 @@
 $(document).ready(() => {
-
   const consoling = () => {
-    console.log('testing');
-  }
+    console.log("testing");
+  };
 
   consoling();
-  
+
   const loadMenu = () => {
     axios.get("/api/menu").then((response) => {
       let data = response.data.menu;
@@ -38,7 +37,4 @@ $(document).ready(() => {
   };
 
   loadMenu();
-
-
-})
-
+});

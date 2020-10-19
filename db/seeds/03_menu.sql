@@ -6,4 +6,8 @@ VALUES (
 ),
 (
   'Peking Duck', '/images/peking.jpg', 1500, 20
+),
+(
+  'Bibimbap', '/images/bibimbap.jpeg' ,890, 12
 )
+

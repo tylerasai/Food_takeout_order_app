@@ -56,6 +56,10 @@ app.get("/menu", (req, res) =>{
   res.render("menu");
 })
 
+app.get("/owner", (req, res)=> {
+  res.render("owner");
+})
+
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
