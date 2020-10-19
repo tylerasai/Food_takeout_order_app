@@ -2,5 +2,8 @@ INSERT INTO menu (
   meal_name, picture_url, price, prep_time
 )
 VALUES (
-  'Bulgogi', '/public/images/bulgogi.jpg' ,900, 10
+  'Bulgogi', '/images/bulgogi.jpg' ,990, 10
+),
+(
+  'Peking Duck', '/images/peking.jpg', 1500, 20
 )

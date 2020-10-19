@@ -1,51 +1,44 @@
+$(document).ready(() => {
 
-$(()=> {
-
-
-  const appending = () => {
-    $(".menu").append("before execution");
+  const consoling = () => {
+    console.log('testing');
   }
-  appending();
 
+  consoling();
   
-  axios.get("https://reqres.in/api/users?page=2").then((response) => {
-    c$(".menu").append(`${response}`);
-  })
-  
+  const loadMenu = () => {
+    axios.get("/api/menu").then((response) => {
+      let data = response.data.menu;
+      console.log(data);
+      renderMenu(data);
+    });
+  };
+
+  const renderMenu = (menuItems) => {
+    for (let menuItem of menuItems) {
+      let myItem = displayMenu(menuItem);
+      $(".menu").prepend(myItem);
+    }
+  };
+
+  const displayMenu = (obj) => {
+    let $menuItem = `
+      <section id="container">
+     
+      <div>
+      <h2>${obj.meal_name}</h2>
+      <p>Price: $${obj.price / 100}</p>
+      </div>
+      
+      <img src="${obj.picture_url}">
+      
+      </section>
+      `;
+    return $menuItem;
+  };
+
+  loadMenu();
+
 
 })
-
-
-
-/*
-
-const loadMenu = () => {
-  $.ajax("/api/menu", { method: "GET" }).then((data) => {
-    console.log(data);
-    renderMenu(data);
-  });
-};
-
-const renderMenu = function (menuItems) {
-  for (let menuItem of menuItems) {
-    let myItem = displayMenu(menuItem);
-    $(".menu").prepend("working!");
-    $(".menu").prepend(myItem);
-  }
-};
-
-
-
-const displayMenu = (obj) => {
-  let $menuItem = `
-<article>
-<label for="img"><img src="${obj.menu[0][picture_url]}" alt ="meal_pic">${obj.menu[0][meal_name]}</label>
-</article>
-}
-`;
-  return $menuItem;
-};
-
-
-*/
 
