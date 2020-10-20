@@ -9,6 +9,7 @@ const bodyParser = require("body-parser");
 const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
+const axios      = require('axios');
 
 // PG database client/connection setup
 const { Pool } = require('pg');
@@ -53,11 +54,24 @@ app.get("/", (req, res) => {
 });
 
 app.get("/menu", (req, res) =>{
+   
   res.render("menu");
 })
 
 app.get("/owner", (req, res)=> {
   res.render("owner");
+})
+
+app.get("/order", (req, res)=> {
+  res.render("order");
+})
+
+
+//Posting order
+app.post("/order", (req, res)=> {
+  
+ 
+  res.render("order");
 })
 
 app.listen(PORT, () => {
