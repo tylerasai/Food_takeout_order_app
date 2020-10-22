@@ -8,4 +8,3 @@ CREATE TABLE menu (
   prep_time INT NOT NULL
 )
 
-select * from menu;

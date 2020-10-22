@@ -18,6 +18,8 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/active_orders.js"></script>
+
     
 
   </head>
@@ -25,6 +27,13 @@
   <body>
     <!--Fixed header from the _partials/header-->
     <%- include partials/_header_owner %>
+
+    <h1>Active Orders</h1>
+
+    <section id="active_order">
+      <!--Dynamically generated order list-->
+    </section>
+
 
     
 

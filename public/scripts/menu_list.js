@@ -3,6 +3,8 @@ $(document).ready(() => {
     axios.get("/api/menu").then((response) => {
       let data = response.data.menu;
       renderMenu(data);
+//buildOrders is in order_counter.js file
+      $("select").change(buildOrders);
     });
   };
 
@@ -18,7 +20,8 @@ $(document).ready(() => {
       <section id="container">
      
       <div>
-      <h2 id="meal_name">${obj.meal_name}</h2>
+      <h2 id="meal_name">${obj.meal_name}</h2> 
+      <h2 class="d-none">${obj.id}  </h2>
       <p id="price">Price: $${obj.price / 100}</p>
       <label for="portion">Add:</label>
       <select name="portion" id="portion">
@@ -36,7 +39,8 @@ $(document).ready(() => {
       </div>
 
       <script>
-        prices.unshift(${obj.price / 100})
+        prices.unshift(${obj.price / 100});
+        menu_id_const.unshift(${obj.id});
       </script>
 
       <img src="${obj.picture_url}">

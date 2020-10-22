@@ -23,6 +23,8 @@
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/menu_list.js"></script>
+    <script type="text/javascript" src="/scripts/order_counter.js"></script>
+
   </head>
 
   <body>
@@ -35,32 +37,34 @@
 
       <script>
         let prices = [];
+        let menu_id_const = [];
       </script>
     </section>
 
-    <form action="/order" method="POST" id="order_button">
       <!--Dynamic total order counter-->
       <section class="order_counter">
         <h4>
          <label for="total_bill">Total:</label> 
-          <h4>$</h4>~~
+          <h4>$</h4>
         </h4>
         
         
         <h4 id="total_bill">0</h4>
       </section>
 
-      <input type="submit" value="Order now" class="btn btn-success btn-block">
-    </form>
+      <div id="order_button">
 
-    <script type="text/javascript" src="/scripts/order_counter.js"></script>
+        <button type="button" class="btn btn-success btn-block">Order now</button>
+
+      </div>
+
 
     <!--Bootstrap JS-->
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    <!-- <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"

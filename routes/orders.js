@@ -1,18 +1,47 @@
-const express = require('express');
-const router  = express.Router();
+const express = require("express");
+const router = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    db.query(`SELECT * FROM orders;`)
-      .then(data => {
-        const menu = data.rows;
+    db.query(`SELECT * FROM orders JOIN order_items ON orders.id = order_items.order_id
+    JOIN users ON orders.user_id = users.id;`)
+      .then((data) => {
+        const orders = data.rows;
         res.json({ orders });
       })
-      .catch(err => {
-        res
-          .status(500)
-          .json({ error: err.message });
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
       });
   });
+
+  router.post("/", (req, res) => {
+    let data = req.body;
+
+    console.log(data);
+
+    db.query(
+      `INSERT INTO orders (user_id)
+    VALUES ($1) RETURNING *;`,
+      [1]
+    ).then((response) => {
+      const order_id = response.rows[0].id;
+
+      for (let obj of data.orderArrayClean) {
+        db.query(
+          `INSERT INTO order_items (meal_name, portion, price, total_bill, menu_id, order_id)
+      VALUES ($1, $2, $3, $4, $5, $6)`,
+          [
+            obj.meal_name,
+            obj.portion,
+            obj.price,
+            obj.total_bill,
+            obj.menu_id,
+            order_id,
+          ]
+        );
+      }
+    });
+  });
+
   return router;
 };

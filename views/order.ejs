@@ -23,17 +23,19 @@
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/menu_list.js"></script>
+    <script type="text/javascript" src="/scripts/order_counter.js"></script>
+
   </head>
   
   <body>
     <!--Fixed header from the _partials/header-->
     <%- include partials/_header %>
     
-    <h1>Order Summary</h1>
+    <h1 class="summary">Order Summary</h1>
     
     <section class="order_counter">
       <h4>
-       <label for="total_bill">Total:</label> 
+       Total: 
         <h4>$</h4>
       </h4>
       
