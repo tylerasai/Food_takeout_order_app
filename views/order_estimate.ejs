@@ -12,6 +12,9 @@
       crossorigin="anonymous"
     />
 
+
+    <link href="https://fonts.googleapis.com/css2?family=Capriola&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -32,10 +35,12 @@
     <%- include partials/_header %>
 
     <section id="payment_page">
-      <h3>Hey <h3 id="user_name"><%= name %></h3><h3>, we will text you when the order is gonna be ready, and when it is ready for pick up!</h3><br>
+      <h3>Hey <h3 id="user_name"><%= name %></h3><h3>, we have received your order!</h3><br>
 
-      
-      <h3>a text will be sent to <br> <%= phone %></h3>
+
+      <img src="/images/loading.gif" alt="loading"><br>
+
+      <h3>Order details will be to sent your number.</h3>
       <td></td>
 
 

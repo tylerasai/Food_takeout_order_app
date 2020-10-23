@@ -1,10 +1,10 @@
 $(document).ready(()=>{
 
 
-  $("#delete_order").on("Click", (event) => {
-    event.preventDefault();
+  // $("#delete_order").on("Click", (event) => {
+  //   event.preventDefault();
 
-    $(this).css("background-color", "red");
+  //   $(this).css("background-color", "red");
 
     // const orderID = 
 

@@ -4,6 +4,7 @@ $(document).ready(()=> {
 axios.get("/api/orders").then((response) => {
     let data = response.data.orders;
     renderOrder(data);
+    $("#start_order").click(StartOrder);
   });
 
 
@@ -25,7 +26,7 @@ axios.get("/api/orders").then((response) => {
 
     <div id="owner_buttons">
      <!-- <form action="" method="POST"> --!>
-      <button id="start_order" type="submit" class="btn btn-primary">🍲</button>
+      <button id="start_order" type="submit" class="btn btn-outline-primary">🍲</button>
      <!-- </form> --!>
 
      <!-- <form action="" method="POST"> --!>

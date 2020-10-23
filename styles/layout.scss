@@ -2,6 +2,7 @@
 
 body {
   background-color: #eee;
+  font-family: "Capriola", sans-serif;
 
   #menu_header {
     color: #ffffff;
@@ -9,7 +10,16 @@ body {
     background-color: rgb(76, 74, 100);
     margin-top: 0;
     padding: 20px;
-    
+    font-family: "Capriola", sans-serif;
+  }
+
+  .menu {
+    max-height: 33em;
+    overflow: scroll;
+  }
+
+  #price {
+    padding-left: 30px;
   }
 
   h1 {
@@ -17,16 +27,26 @@ body {
     text-align: center;
   }
 
-  .menu img {
+  #meal_picture {
     width: 100px;
     height: 100px;
     object-fit: cover;
+    align-self: flex-start;
+  }
+
+  #name_price_option {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding-bottom: 30px;
+    
   }
 
   #container {
     display: flex;
     justify-content: space-between;
-    padding: 2px 20px 2px 20px;
+    margin: 2px 20px 2px 20px;
+    font-family: "Capriola", sans-serif;
   }
 
   #welcome_page {
@@ -38,27 +58,28 @@ body {
   #order_button {
     text-align: center;
     margin: 0 30px;
-    
   }
 
   .order_counter {
     display: flex;
     justify-content: space-around;
     padding: 0 60px 0 60px;
+    margin-top: 20px;
+    font-family: "Capriola", sans-serif;
   }
 
-  #total_bill, .order_counter h4 {
+  #total_bill,
+  .order_counter h4 {
     color: green;
     font-weight: bold;
-
   }
 
   #portion {
     width: 60px;
     text-align: center;
-    text-align-last:right;
-    padding-right: 20px;
+    text-align-last: right;
     direction: rtl;
+    margin-left: 10px;
   }
 
   #payment_page {
@@ -67,7 +88,7 @@ body {
     text-align: center;
     margin-left: 30px;
     margin-right: 30px;
-    
+    font-family: "Capriola", sans-serif;
   }
 
   #payment_page h3 {
@@ -75,7 +96,8 @@ body {
   }
 
   #payment_page img {
-    height: 30px;
+    width: 300px;
+    height: auto;
   }
 
   #active_order {
@@ -84,14 +106,14 @@ body {
   }
 
   #order_container {
-    border-bottom: 1px black solid;
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
-
   }
 
-  #order_container h4, h5, p {
+  #order_container h4,
+  h5,
+  p {
     margin: 0;
     padding: 0;
   }
@@ -109,5 +131,17 @@ body {
 
   #complete_order {
     margin-left: 1em;
+  }
+
+  #welcome_page h1 {
+    font-family: "Capriola", sans-serif;
+  }
+
+  .navbar {
+    font-family: "Capriola", sans-serif;
+  }
+
+  #price_and_option {
+    display: flex;
   }
 }

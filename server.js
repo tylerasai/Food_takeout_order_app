@@ -85,17 +85,16 @@ app.post("/verify", (req, res) => {
 
   const to = req.body.phone;
   const name = req.body.name;
-  const body = 'We got your order!'
+  const body = "We have received your order!";
   // const card_number = card_number;
 
   const templateVars = {
     name: name,
     phone: to,
-    body: body
+    body: body,
   };
 
   sendMsg(to, body);
-
 
   res.render("order_estimate", templateVars);
 });
@@ -104,29 +103,26 @@ app.post("/verify", (req, res) => {
 app.post("/sms", (req, res) => {
   const twiml = new MessagingResponse();
   const minutes = req.body.Body;
-  const body = `Your order will be ready in ${minutes}`; 
-  // const body_complete = 'Your order is complete'; 
+  const body = `Your order will be ready in ${minutes}`;
+  const restaurant_number = "+14036078620";
   
+  
+  // const body_complete = 'Your order is complete';
+
   // if(minutes = 'Complete') {
   //   sendMsg('+14036078620', body)
 
   // }
-  
-  
-  if (minutes) {
-    
-    sendMsg('+14036078620', body)
-    .then((e)=>{
-      console.log(e);
 
-    })
-    .catch(error => {
-      console.log("error is:", error);
-    })
-    
-    
+  if (minutes) {
+    sendMsg(restaurant_number, body)
+      .then((e) => {
+        console.log(e);
+      })
+      .catch((error) => {
+        console.log("error is:", error);
+      });
   }
- 
 
   // res.writeHead(200, { "Content-Type": "text/xml" });
   // res.end(twiml.toString());
