@@ -21,8 +21,6 @@ module.exports = (db) => {
   router.post("/", (req, res) => {
     let data = req.body;
 
-    console.log(data);
-
     db.query(
       `INSERT INTO orders (user_id)
     VALUES ($1) RETURNING *;`,

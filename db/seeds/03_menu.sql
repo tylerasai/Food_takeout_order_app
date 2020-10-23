@@ -8,6 +8,6 @@ VALUES
 ('Wagyu  ', '/images/wagyu.jpg', 3240),
 ('Garlic Lamb Shank  ', '/images/lambshank.jpeg', 2970),
 ('Plant Based Burger  ','/images/burger.jpg', 1120 ),
-('Garlic Rice Pilaf', '/images/pilaf.jpg', 920)
+('Garlic Rice Pilaf  ', '/images/pilaf.jpg', 920)
 
 

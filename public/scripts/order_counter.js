@@ -28,7 +28,7 @@ const buildOrders =  () => {
   //Getting name of selected meals in array
 
   //Getting all the meal name on the display
-  let allMeals = $("h2#meal_name").text();
+  let allMeals = $("h4#meal_name").text();
 
   //Turning all meal into an array
 
