@@ -19,21 +19,26 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/menu_list.js"></script>
+
+
+
+
+
   </head>
 
   <body>
     <!--Fixed header from the _partials/header-->
     <%- include partials/_header %>
 
-    <section id="welcome_page">
-      <h1>Welcome to MyRestaurant</h1>
-      <form action="/menu">
-        <button class="place_order btn btn-success">Place an order</button>
-      </form>
-      <br/>
-      <form action="/owner">
-        <button class="place_order btn btn-primary">I am an owner</button>
-      </form>
+    <section id="payment_page">
+      <h3>Hey <h3 id="user_name"><%= name %></h3><h3>, we will text you when the order is gonna be ready, and when it is ready for pick up!</h3><br>
+
+      
+      <h3>a text will be sent to <br> <%= phone %></h3>
+      <td></td>
+
+
     </section>
 
     <!--Bootstrap JS-->

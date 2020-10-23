@@ -10,6 +10,9 @@ const sass = require("node-sass-middleware");
 const app = express();
 const morgan = require("morgan");
 const axios = require("axios");
+const http = require("http");
+const MessagingResponse = require("twilio").twiml.MessagingResponse;
+const { sendMsg } = require("./twilio");
 
 // PG database client/connection setup
 const { Pool } = require("pg");
@@ -40,6 +43,7 @@ app.use(express.static("public"));
 const usersRoutes = require("./routes/users");
 const menuRoutes = require("./routes/menu");
 const ordersRoutes = require("./routes/orders");
+const twilio = require("twilio");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -64,9 +68,69 @@ app.get("/owner", (req, res) => {
   res.render("owner");
 });
 
-// app.get("/orders", (req, res) => {
-//   res.render("order");
-// });
+app.get("/payment", (req, res) => {
+  res.render("payment");
+});
+
+app.get("/verify", (req, res) => {
+  res.render("verify");
+});
+
+app.get("/entercard", (req, res) => {
+  res.render("entercard");
+});
+
+app.post("/verify", (req, res) => {
+  console.log(req.body);
+
+  const to = req.body.phone;
+  const name = req.body.name;
+  const body = 'We got your order!'
+  // const card_number = card_number;
+
+  const templateVars = {
+    name: name,
+    phone: to,
+    body: body
+  };
+
+  sendMsg(to, body);
+
+
+  res.render("order_estimate", templateVars);
+});
+
+//twilio
+app.post("/sms", (req, res) => {
+  const twiml = new MessagingResponse();
+  const minutes = req.body.Body;
+  const body = `Your order will be ready in ${minutes}`; 
+  // const body_complete = 'Your order is complete'; 
+  
+  // if(minutes = 'Complete') {
+  //   sendMsg('+14036078620', body)
+
+  // }
+  
+  
+  if (minutes) {
+    
+    sendMsg('+14036078620', body)
+    .then((e)=>{
+      console.log(e);
+
+    })
+    .catch(error => {
+      console.log("error is:", error);
+    })
+    
+    
+  }
+ 
+
+  // res.writeHead(200, { "Content-Type": "text/xml" });
+  // res.end(twiml.toString());
+});
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

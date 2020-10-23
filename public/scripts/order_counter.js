@@ -3,11 +3,11 @@ $(function () {
 
 
   $("#order_button").on("click", orderNow);
+
 });
 
-// let orderArrayClean = [];
 
-const buildOrders = function (event) {
+const buildOrders =  () => {
   let portionArray = [];
   let portion = $("select#portion option:selected").text();
   for (let i = 0; i < portion.length; i++) {
@@ -48,7 +48,8 @@ const buildOrders = function (event) {
       (this.meal_name = meal_name),
         (this.portion = portion),
         (this.price = price),
-        ((this.total_bill = total_bill), (this.menu_id = menu_id));
+        ((this.total_bill = total_bill), 
+        (this.menu_id = menu_id));
     }
 
     for (i = 0; i < portion.length; i++) {
@@ -74,8 +75,6 @@ const buildOrders = function (event) {
     (value) => JSON.stringify(value) !== "{}"
   );
 
-  console.log(orderArrayClean);
-
   let totalOrderBill = totalBill(portionArray, prices);
 
   let menuHiddenId = $(".d-none").text();
@@ -87,7 +86,14 @@ const buildOrders = function (event) {
   let menuIdArray = menuIdSep(menuHiddenId).filter((e) => e);
 };
 
-const orderNow = function () {
-  $.post("/api/orders", { orderArrayClean }).then(() => {
-  });
+const orderNow = () => {
+  if(orderArrayClean !== undefined) {
+    $.post("/api/orders", { orderArrayClean }).then(() => {
+    });
+  } else {
+    prompt("Order can't be empty");
+  }
+
 };
+
+

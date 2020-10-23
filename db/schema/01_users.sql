@@ -6,4 +6,3 @@ CREATE TABLE users (
   phone_number BIGINT NOT NULL
 );
 
-select * from users;

@@ -25,14 +25,14 @@
     <!--Fixed header from the _partials/header-->
     <%- include partials/_header %>
 
-    <section id="welcome_page">
-      <h1>Welcome to MyRestaurant</h1>
-      <form action="/menu">
-        <button class="place_order btn btn-success">Place an order</button>
+    <section id="payment_page">
+      <h3 id="payment_header">Choose payment</h3><br><br>
+      <form action="/verify">
+        <button class="place_order btn btn-outline-secondary"> 💵 Pay upon pick-up</button>
       </form>
       <br/>
-      <form action="/owner">
-        <button class="place_order btn btn-primary">I am an owner</button>
+      <form action="/entercard">
+        <button class="place_order btn btn-outline-secondary"> 💳 Pay now</button>
       </form>
     </section>
 

@@ -3,7 +3,6 @@ $(document).ready(()=> {
   
 axios.get("/api/orders").then((response) => {
     let data = response.data.orders;
-    console.log(data);
     renderOrder(data);
   });
 
@@ -19,9 +18,22 @@ axios.get("/api/orders").then((response) => {
     let $orderItem = `
     <section id="order_container">
      
-      <h4>Order ID: ${obj.id} </h4>
-      <h5>Customer name ${obj.user_name}</h5>
+    <div>
+      <h4>Order ID: ${obj.order_id} </h4>
       <p>${obj.portion} ✕ ${obj.meal_name} ${obj.total_bill}</p> 
+    </div>
+
+    <div id="owner_buttons">
+     <!-- <form action="" method="POST"> --!>
+      <button id="start_order" type="submit" class="btn btn-primary">🍲</button>
+     <!-- </form> --!>
+
+     <!-- <form action="" method="POST"> --!>
+     <button id="complete_order" type="submit" class="btn btn-success">🏁</button>
+    <!-- </form> --!>
+    </div>
+
+ 
 
     </section>
       

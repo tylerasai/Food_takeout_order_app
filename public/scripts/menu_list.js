@@ -1,9 +1,10 @@
 $(document).ready(() => {
+
   const loadMenu = () => {
     axios.get("/api/menu").then((response) => {
       let data = response.data.menu;
       renderMenu(data);
-//buildOrders is in order_counter.js file
+      //buildOrders is in order_counter.js file
       $("select").change(buildOrders);
     });
   };
@@ -51,7 +52,4 @@ $(document).ready(() => {
   };
 
   loadMenu();
-
-
-
 });

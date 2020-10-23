@@ -19,20 +19,22 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/menu_list.js"></script>
   </head>
 
   <body>
     <!--Fixed header from the _partials/header-->
     <%- include partials/_header %>
 
-    <section id="welcome_page">
-      <h1>Welcome to MyRestaurant</h1>
-      <form action="/menu">
-        <button class="place_order btn btn-success">Place an order</button>
-      </form>
-      <br/>
-      <form action="/owner">
-        <button class="place_order btn btn-primary">I am an owner</button>
+    <section id="payment_page">
+      <h3>Please enter your details</h3><br>
+      <form action="/verify" method="POST">
+        <input id="phone" type="tel" name="phone" placeholder="Phone number" /><br><br>
+        <input id="name" type="text" name="name" placeholder="Name for the order" /><br><br>
+        <input id="name" type="number" name="card_number" placeholder="Card number"/><br><br>
+        <img src="/images/card.png" alt="cards"><br><br>
+
+        <button class="place_order btn btn-success" type="submit">Submit</button>
       </form>
     </section>
 

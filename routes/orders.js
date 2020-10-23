@@ -3,8 +3,12 @@ const router = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    db.query(`SELECT * FROM orders JOIN order_items ON orders.id = order_items.order_id
-    JOIN users ON orders.user_id = users.id;`)
+    db.query(`
+    select order_id ,users.name, meal_name, portion,price, order_items.total_bill 
+    from order_items 
+    join orders 
+    on order_items.order_id = orders.id
+    join users on users.id = orders.user_id;`)
       .then((data) => {
         const orders = data.rows;
         res.json({ orders });

@@ -31,7 +31,7 @@
     <!--Fixed header from the _partials/header-->
     <%- include partials/_header %>
 
-    <h1>Welcome to the menu</h1>
+    <h1 id="menu_header">Menu</h1>
     <section class="menu">
       <!--Dynamic menu from the psql database-->
 
@@ -52,11 +52,11 @@
         <h4 id="total_bill">0</h4>
       </section>
 
-      <div id="order_button">
+      <form id="order_button" action="/payment">
 
-        <button type="button" class="btn btn-success btn-block">Order now</button>
+        <input type="submit" class="btn btn-success btn-block" value="Order now!"></button>
 
-      </div>
+      </form>
 
 
     <!--Bootstrap JS-->
