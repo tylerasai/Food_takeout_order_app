@@ -10,10 +10,14 @@ Foor order takeout app - Midterm Project for LHL
 
 ## Screenshots
 
-![Alt text](LHL-midterm-TZ_project_10/blob/master/public/screenshots/Screenshot%20from%202020-10-24%2022-51-08.png)
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+![Alt text](/public/screenshots/Screenshot%20from%202020-10-24%2022-51-08.png)
+![Alt text](/public/screenshots/Screenshot%20from%202020-10-24%2022-52-03.png)
+![Alt text](/public/screenshots/Screenshot%20from%202020-10-24%2022-52-23.png)
+![Alt text](/public/screenshots/Screenshot%20from%202020-10-24%2022-52-39.png)
+![Alt text](/public/screenshots/Screenshot%20from%202020-10-24%2022-52-59.png)
+![Alt text](/public/screenshots/Screenshot%20from%202020-10-24%2022-53-19.png)
+![Alt text](/public/screenshots/Screenshot%20from%202020-10-24%2022-53-37.png
+
 
 
 ## Getting Started
