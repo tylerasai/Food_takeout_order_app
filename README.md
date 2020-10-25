@@ -6,7 +6,14 @@ Foor order takeout app - Midterm Project for LHL
 2. Restaurant can reply back with estimated completion time of the order
 3. Restaurant have start order button which notifies the customer : "Your order has started"
 4. Restaurant has order complete button in their dashboard which notifies the customer: "Your order is ready for pickup"
-5. Restaurant can add menu from their mobile device or the web.
+
+#### Bugs to fix and additiona features:
+  - Grouping the order
+  - Sending order ID and meal titles to the restaurant
+  - Resolve simultaneous order cinflict
+  - Restaurant can add menu from their mobile device or the web
+  - Make it a multiple restaurant app and deploy
+
 
 ## Screenshots
 
@@ -16,7 +23,7 @@ Foor order takeout app - Midterm Project for LHL
 ![Alt text](/public/screenshots/Screenshot%20from%202020-10-24%2022-52-39.png)
 ![Alt text](/public/screenshots/Screenshot%20from%202020-10-24%2022-52-59.png)
 ![Alt text](/public/screenshots/Screenshot%20from%202020-10-24%2022-53-19.png)
-![Alt text](/public/screenshots/Screenshot%20from%202020-10-24%2022-53-37.png
+![Alt text](/public/screenshots/Screenshot%20from%202020-10-24%2022-53-37.png)
 
 
 
