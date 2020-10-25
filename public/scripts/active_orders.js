@@ -4,7 +4,7 @@ $(document).ready(()=> {
 axios.get("/api/orders").then((response) => {
     let data = response.data.orders;
     renderOrder(data);
-    $("#start_order").click(StartOrder);
+    $(".start_order").on("click", StartOrder);
   });
 
 
@@ -17,21 +17,16 @@ axios.get("/api/orders").then((response) => {
 
   const displayOrder = (obj) => {
     let $orderItem = `
-    <section id="order_container">
-     
-    <div>
-      <h4>Order ID: ${obj.order_id} </h4>
-      <p>${obj.portion} ✕ ${obj.meal_name} ${obj.total_bill}</p> 
+    <section class="order_container">
+    
+    <div class="testing">
+    <h4>Order ID: ${obj.order_id} </h4>
+    <p>${obj.portion} ✕ ${obj.meal_name} ${obj.total_bill}</p> 
     </div>
 
-    <div id="owner_buttons">
-     <!-- <form action="" method="POST"> --!>
-      <button id="start_order" type="submit" class="btn btn-outline-primary">🍲</button>
-     <!-- </form> --!>
-
-     <!-- <form action="" method="POST"> --!>
-     <button id="complete_order" type="submit" class="btn btn-success">🏁</button>
-    <!-- </form> --!>
+    <div class="owner_buttons">
+      <button type="submit" class="start_order btn btn-outline-primary">🍲</button>
+      <button type="submit" class="complete_order btn btn-success">🏁</button>
     </div>
 
  
@@ -42,7 +37,6 @@ axios.get("/api/orders").then((response) => {
     return $orderItem;
   };
 
-  loadMenu();
 
 
 })

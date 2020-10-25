@@ -86,6 +86,7 @@ app.post("/verify", (req, res) => {
   const to = req.body.phone;
   const name = req.body.name;
   const body = "We have received your order!";
+  const body_restaurant = `You got an order from ${to}`;
   // const card_number = card_number;
 
   const templateVars = {
@@ -95,6 +96,7 @@ app.post("/verify", (req, res) => {
   };
 
   sendMsg(to, body);
+  sendMsg(to, body_restaurant);
 
   res.render("order_estimate", templateVars);
 });
@@ -106,14 +108,6 @@ app.post("/sms", (req, res) => {
   const body = `Your order will be ready in ${minutes}`;
   const restaurant_number = "+14036078620";
   
-  
-  // const body_complete = 'Your order is complete';
-
-  // if(minutes = 'Complete') {
-  //   sendMsg('+14036078620', body)
-
-  // }
-
   if (minutes) {
     sendMsg(restaurant_number, body)
       .then((e) => {
@@ -123,6 +117,8 @@ app.post("/sms", (req, res) => {
         console.log("error is:", error);
       });
   }
+
+  
 
   // res.writeHead(200, { "Content-Type": "text/xml" });
   // res.end(twiml.toString());

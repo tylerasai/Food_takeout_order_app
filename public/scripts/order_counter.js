@@ -3,6 +3,9 @@ $(function () {
 
 
   $("#order_button").on("click", orderNow);
+  $(".place_order").on("click", () => {
+    console.log(orderArrayClean);
+  })
 
 });
 
@@ -87,12 +90,11 @@ const buildOrders =  () => {
 };
 
 const orderNow = () => {
-  if(orderArrayClean !== undefined) {
-    $.post("/api/orders", { orderArrayClean }).then(() => {
+    $.post("/api/orders", { orderArrayClean }).then(() => 
+    {
+      console.log({ orderArrayClean });
     });
-  } else {
-    prompt("Order can't be empty");
-  }
+ 
 
 };
 

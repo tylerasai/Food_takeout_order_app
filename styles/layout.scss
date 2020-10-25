@@ -105,13 +105,13 @@ body {
     margin-right: 20px;
   }
 
-  #order_container {
+  .order_container {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
   }
 
-  #order_container h4,
+  .order_container h4,
   h5,
   p {
     margin: 0;
@@ -123,13 +123,13 @@ body {
     height: auto;
   }
 
-  #owner_buttons {
+  .owner_buttons {
     display: flex;
     height: 40px;
     justify-content: space-between;
   }
 
-  #complete_order {
+  .complete_order {
     margin-left: 1em;
   }
 
